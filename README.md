@@ -1,6 +1,6 @@
 # Сервис уведомлений
 
-Сервис разработан с помощью django rest framework, celery, flower
+Сервис разработан на django rest framework с celery и flower
 
 <p>Решение тестового задания от **Фабрики решений** на **Python-разработчик (Django, DRF)**
 
@@ -24,27 +24,28 @@ python -m venv venv
 ````
 source\venv\bin\activate
 ````
-
-5. Установка зависимостей:
+5. В файле .evn заполнить необходимые данные: ```TOKEN = '<your token>'```
+ 
+6. Установка зависимостей:
 
 ```
 pip install -r requirements.txt
 ```
 
-6. Создать и применить миграции в базу данных:
+7. Создать и применить миграции в базу данных:
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
-7. Запустить сервер
+8. Запустить сервер
 ```
 python manage.py runserver
 ```
-8. Запустить celery
+9. Запустить celery
 ```
 celery -A notification_service worker -l info
 ```
-9. Запустить flower
+10. Запустить flower
 
 ```
 celery -A notification_service flower --port=5555
@@ -57,11 +58,12 @@ celery -A notification_service flower --port=5555
 git clone git@github.com:Witaly3/notification_service.git
 ```
 2. Перейти в директорию проекта
-3. Запустить контейнеры 
+3. В файле .evn заполнить необходимые данные: ```TOKEN = '<your token>'```
+4. Запустить контейнеры 
 ``` 
 sudo docker-compose up -d
  ```
-3. Остановка работы контейнеров 
+5. Остановка работы контейнеров 
 ```
 sudo docker-compose stop
 ```
@@ -75,7 +77,7 @@ python manage.py test
 
 ```http://0.0.0.:8000/docs/``` - docs проекта
 
-```0.0.0.0:5555``` - celery flower
+```http://0.0.0.0:5555``` - celery flower
 
 ***
 
@@ -180,5 +182,3 @@ python manage.py test
 <li>реализовать дополнительную бизнес-логику: добавить в сущность "рассылка" поле "временной интервал", в котором можно задать промежуток времени, в котором клиентам можно отправлять сообщения с учётом их локального времени. Не отправлять клиенту сообщение, если его локальное время не входит в указанный интервал.</li>
 
 </ol>
-
-
