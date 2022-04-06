@@ -50,6 +50,12 @@ celery -A notification_service worker -l info
 ```
 celery -A notification_service flower --port=5555
 ```
+***
+### Запуск тестов
+``` 
+python manage.py test
+```
+***
 ## Установка проекта с помощью docker-compose
 
 
@@ -68,14 +74,19 @@ sudo docker-compose up -d
 sudo docker-compose stop
 ```
 ***
-### Запуск тестов
-``` 
-python manage.py test
-```
-***
-```http://0.0.0.:8000/api/``` - api проекта
+```http://0.0.0.0:8000/api/``` - api проекта
 
-```http://0.0.0.:8000/docs/``` - docs проекта
+```http://0.0.0.0:8000/api/clients/``` - клиенты
+
+```http://0.0.0.0:8000/api/mailings/``` - рассылки
+
+```http://0.0.0.0:8000/api/mailings/fullinfo/``` - общая статистика по всем рассылкам
+
+```http://0.0.0.0:8000/api/mailings/<pk>/info/``` - детальная статистика по конкретной рассылке
+
+```http://0.0.0.0:8000/api/messages/``` - сообщения
+
+```http://0.0.0.0:8000/docs/``` - docs проекта
 
 ```http://0.0.0.0:5555``` - celery flower
 
