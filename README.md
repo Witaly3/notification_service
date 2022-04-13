@@ -5,7 +5,7 @@
 
 ## Установка и запуск
 
-1. Склонировать репозиторий с GitLab:
+1. Склонировать репозиторий с Github:
 
 ````
 git clone git@github.com:Witaly3/notification_service.git
@@ -58,7 +58,7 @@ python manage.py test
 ## Установка проекта с помощью docker-compose
 
 
-1. Склонировать репозиторий с GitLab
+1. Склонировать репозиторий с Github
 ```
 git clone git@github.com:Witaly3/notification_service.git
 ```
