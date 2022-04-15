@@ -55,5 +55,3 @@ services:
       - redis
       - web
       - celery 
-#volumes:
-#  postgres_data:
