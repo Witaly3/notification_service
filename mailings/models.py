@@ -16,12 +16,8 @@ class Mailing(models.Model):
     )
 
     @property
-    def to_send(self):
-        now = timezone.now()
-        if self.date_start <= now <= self.date_end:
-            return True
-        else:
-            return False
+    def to_send(self) -> bool:
+        return bool(self.date_start <= timezone.now() <= self.date_end)
 
     def __str__(self):
         return f"Mailing {self.id} from {self.date_start}"
